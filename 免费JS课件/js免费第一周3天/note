@@ -1,0 +1,96 @@
+Number()
+    ""->0
+    undefined->NaN
+    null->0
+    true->1
+    false->0
+parseInt() 把字符串中整数部分提取出来 首字符不是数字则返回结果NaN
+parseFloat() 把字符串中整数和小数部分提取出来 首字符不是数字或者小数点则返回结果NaN
+
+boolean true false
+Boolean()将其他数据类型转换程boolean
+0,"",null,undefined,NaN
+
+string字符串类型
+1.var str="abc" str.length;
+2.通过下标可以获取到每个字符
+3.区别变量和字符串
+4.+号在字符串这边表示拼接
+5.转义字符 \ \\ \' \" \n\r\t
+
+object类型
+可以存储不同类型的值，是多种数据类型的复合载体
+增删改查
+通过打.的方式，另一种是通过[]的方式
+obj[0]
+何时为查找？直接获取
+何时为添加或修改？赋值时
+
+var obj = {name:"lily",age:18,gender:true};
+for(var attr in obj){
+    obj[attr] 正确
+    obj.attr obj['attr'] obj里有确切的一个属性，它的属性名是attr
+}
+
+if(条件){
+
+}else{
+
+}
+三元运算符    条件？条件成立执行这里：条件不成立执行这里
+
+if(条件一){
+
+}else if(条件二){
+
+}else if(条件二){
+
+}else{
+
+}
+switch ...case....
+1)break跳出switch语句
+2)条件和值之间的比较是三个等号的比较
+
+for...
+break 跳出本轮循环
+continue 跳出本次循环，还要继续执行i++的操作
+
+document.getElementById("div1")
+context.getElementsByTagName("li");
+
+引用数据类型：对象类型和函数类型
+万物皆对象
+函数也是对象类型，但是它比较特殊，所以独立成函数类型
+
+1.为什么会有函数类型？
+  1)解决代码重复问题，减少冗余代码
+  2)具有封装的功能,保护里面代码,防止代码覆盖和冲突问题
+  3)函数相当于是一个功能，每次只需要执行这个函数，则相当于执行这个功能
+2.函数(方法)的定义
+    function 函数名(){//指定一项功能
+
+    }
+    function sum(){
+
+    }
+    函数定义的步骤：
+    1)首先开辟一个内存空间，假设引用地址00ffxx
+    2)把函数体里的内容以字符串的形式保存在内存空间
+    3)把引用地址赋给sum,sum则代表整个函数
+3.执行函数
+    函数名();
+    sum()
+    函数的执行步骤：
+    1)首先开辟一个封闭的私有的内存空间（作用域）
+    2）将函数体里的字符串转换成js代码，从上往下执行
+
+    预习视频：
+    1.数组和算法
+    2.DOM,string,Math,Date
+
+
+
+
+
+

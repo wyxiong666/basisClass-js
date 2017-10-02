@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script>
+    //2017/8/10  12:40:22
+    //2017年8月10日 星期四 12时40分22秒
+    var now = new Date();//以当前电脑时间为基准创建时间对象
+    var year  = now.getFullYear();//年
+    var month = now.getMonth()+1;//（0-11）月
+    var date = now.getDate();//日
+    var week = now.getDay();//（0-6 星期日-星期六）
+    var hour = now.getHours();//小时
+    var minute = now.getMinutes();//分钟
+    var second = now.getSeconds();//秒
+    var mSecond = now.getMilliseconds();//毫秒
+    switch (week){
+        case 0:
+           week = "星期日";
+            break;
+        case 1:
+            week = "星期一";
+            break;
+        case 2:
+            week = "星期二";
+            break;
+        case 3:
+            week = "星期三";
+            break;
+        case 4:
+            week = "星期四";
+            break;
+        case 5:
+            week = "星期五";
+            break;
+        case 6:
+            week = "星期六";
+            break;
+    }
+    function zero(num){//补零
+        return num<10?"0"+num:num;
+    }
+    var str = zero(year)+"年"+zero(month)+"月"+zero(date)+"日"+week+zero(hour)+"时"+zero(minute)+"分"+zero(second)+"秒";
+
+    var oDiv = document.getElementById("div1");
+    oDiv.innerHTML = str;//把str的内容作为oDiv的内容
+
+
+
+
+
+</script>

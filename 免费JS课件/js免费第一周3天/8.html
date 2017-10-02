@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            width: 600px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        ul li{
+            line-height: 40px;
+            border-bottom: 1px dashed #ddd;
+            padding-left: 10px;
+        }
+        ul li.bg1{
+            background:pink;
+        }
+        ul li.bg2{
+            background: orange;
+        }
+        ul li.bg3{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li >应届毕业生也能拿20多万年薪我是面霸，我一口气拿下六个大公司offer</li>
+    <li >学完之真的能推荐进百度吗我来揭发珠峰培训的老底</li>
+    <li >担心逻辑差，学不会：我们都是珠峰培训的骄傲----23岁切图小妹工资翻倍</li>
+    <li >我担心年龄大了学了也没有用：30岁改行学进新浪，我不悔选择</li>
+</ul>
+</body>
+</html>
+<script>
+    /*划过每个li时，类名变成bg3
+     * 划出时类名变成原来的，有可能是bg1,也有可能是bg2
+     * */
+    var oUl = document.getElementById("list");
+    var oLis = oUl.getElementsByTagName("li");//li的集合
+
+    for(var i = 0;i<oLis.length;i++){
+        if(i%2==0){
+            oLis[i].className ="bg1"
+        }else{
+            oLis[i].className ="bg2";
+        }
+        oLis[i].zhufeng = oLis[i].className;
+        oLis[i].onmouseover = function(){
+            this.className = "bg3"
+        };
+        oLis[i].onmouseout = function(){
+            this.className = this.zhufeng;
+        }
+    }
+
+
+
+
+
+</script>

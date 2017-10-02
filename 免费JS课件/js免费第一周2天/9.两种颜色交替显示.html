@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            line-height: 40px;
+            border-bottom: 1px dashed #ddd;
+            padding-left: 10px;
+        }
+
+        ul li.bg1 {
+            background: red;
+        }
+
+        ul li.bg2 {
+            background: green;
+        }
+
+        ul li.bg3 {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>实用至上，高效为王的DOM库（单例模式）</li>
+    <li>比jQuery动画还精彩的CSS3+HTML5手机端效果应用</li>
+    <li>使用观察者设计模式，从原理入手的事件库</li>
+    <li>开发自己的移动端HTML5事件库</li>
+    <li>模块化开发之一：选项卡框架</li>
+    <li>模块化开发之二：可扩展自定义事件的完美拖拽框架</li>
+    <li>模块化开发之三:HTML5场景应用实例</li>
+</ul>
+</body>
+</html>
+<script>
+    var oUl = document.getElementById("list");//ul标签
+    var oLis = oUl.getElementsByTagName("li");//在ul标签下获得一组li标签
+    for (var i = 0; i < oLis.length; i++) {
+        /*
+         if(i%2==0){下标是偶数时，添加类名bg1
+            oLis[i].className ="bg1";
+         }else{下标是奇数时，添加类名bg2
+            oLis[i].className = "bg2";
+         }
+         */
+        //三元运算符
+        //条件？条件成立执行这里:条件不成立时执行这里
+        //i%2==0?oLis[i].className ="bg1": oLis[i].className = "bg2";
+
+        oLis[i].className = i % 2 == 0 ? "bg1" : "bg2";//把三元运算符的结果赋值给每个li的类名
+    }
+
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+     <ul id="oUl">
+         <li>00000</li>
+         <!--注释的内容-->
+         <li id="list1">1111</li>
+         222
+         <li>33333</li>
+         <li>4444</li>
+     </ul>
+</div>
+<script>
+//    var oDiv = document.getElementById("div1");
+//    console.log(oDiv.parentNode);
+        console.log(document.body.parentNode.parentNode.parentNode);//null 原本应该能找到父节点，但找不到时返回null
+//    var oUl = document.getElementById("oUl");
+//    console.log(oUl.lastElementChild);
+
+
+</script>
+</body>
+</html>

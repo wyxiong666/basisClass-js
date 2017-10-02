@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #div1{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body >
+<div id="div1" style="background-color: white"></div>
+</body>
+</html>
+<script>
+    /*
+    * 点击时：
+    * 若背景色是白色则变成黑色
+    * 若背景色是黑色则变成白色
+    * */
+    //document.body   body标签
+    //document.documentElement  html标签
+    var oDiv = document.getElementById("div1");
+    oDiv.onclick = function(){/*点击时做些事情 每次点击都会执行一遍*/
+        //1.获取背景色（每个css属性都有默认值）
+        //console.log(oDiv.style.backgroundColor);//默认值是""
+        var bg = oDiv.style.backgroundColor;
+        if(bg=="white"){
+            oDiv.style.backgroundColor = 'black';
+        }else{
+            oDiv.style.backgroundColor = 'white';
+        }
+    }
+
+
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div1{
+            width: 100px;
+            height:100px;
+            background: red;
+        }
+        .a{
+            width: 100px;
+            height:100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <p>1111</p>
+    <div id="div3"></div>
+
+    <div id="div5" >
+        <p>22222  <em>3333</em></p>
+    </div>
+</body>
+</html>
+<script>
+   var oDiv = document.createElement("div");
+    oDiv.id = "div1";
+    //document.body.appendChild(oDiv);
+   //插入
+  /* var oP = document.getElementsByTagName("p")[0];
+    document.body.insertBefore(oDiv,oP);*///div插入到p标签前面
+
+    //替换
+    var oDiv3 = document.getElementById("div3");
+    document.body.replaceChild(oDiv,oDiv3);
+
+    //删除
+    var div1 = document.getElementById("div1");
+    document.body.removeChild(div1);
+
+    //克隆
+   /* var div5 = document.getElementById("div5");
+    var newDiv5 =  div5.cloneNode(true);
+    document.body.appendChild(newDiv5);
+*/
+
+    //设置和获取元素属性的方式
+    //1.自定义属性
+    var div5 = document.getElementById("div5");
+//    div5.zhufeng = "peixun";
+//   console.log(div5.zhufeng);
+    //getAttribute()和setAttribute();
+    //div5.setAttribute("zhufeng","111");//设置属性名和属性值
+    //div5.getAttribute("zhufeng");//通过属性名获取属性值
+
+    div5.setAttribute("class","a");//ie6~7设置类名成功，但样式没起作用
+
+
+
+
+</script>

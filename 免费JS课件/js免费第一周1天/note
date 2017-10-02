@@ -1,0 +1,167 @@
+产品-设计师-前端（图-网页）-测试-后台（php,java,node.js）-测试-项目上线-改版（前端人员在第一版的基础上继续更改）、
+
+前端人员的技术要求
+html+css+jquery(框架)+js(基础)
+html+css+js(原生)
+html+css+js+React(前端框架)+Vue+Node.js+webpack+babel ->前端工程化
+可复用性
+规范化
+工程化
+
+前端的职业发展方向
+1.熟 3.专业 5.精通 寂寞路线 ...前端架构师|管理层|node.js....产品经理|运营|项目经理
+
+网页的组成部分：
+1.搭结构 ->HTML 超文本标记语言（标记语言）
+2.装饰房子 ->CSS 层叠样式表（标记语言）
+3.实现屋内的功能->实现网页的交互行为->javascript（轻量级的脚本语言）
+
+Javascript语言的组成部分：
+1.ecmascript(es5)语法知识：变量，命名规则，数据类型，语句等
+2.DOM(document object model)文档对象模型：操作网页元素常用的属性和方法
+3.BOM(browser object model)浏览器对象模型：操作浏览器常用的属性和方法
+
+1.js引入的方式（三种）
+    1)行内式：不安全，尽量少用或者不用
+    2)内嵌式 <script></script>
+    3)外链式 <script src="index.js"></script>
+
+    要求：script标签写在body的后面或者html标签的后面（也就是所有元素的后面）
+
+2.js在页面输出的方式
+    alert(1);在页面上以弹框的方式出现 适合简单的数据
+    console.log();在控制台里打印出信息 适合于复杂的数据（仅仅打印出数据的表面）
+    console.dir();在控制台里打印出详细的数据信息
+    document.write();将内容在网页里显示出来，影响页面的美观，不推荐使用这种方式
+     confirm("今天天气怎么样？") 也是以弹框的方式展示出来，但是你点确定可以获取到true,点取消可以获取false  玩玩而已已经过时
+
+3.js是用来操作网页元素
+   CSS里如何获取到网页元素（标签）？
+   最基本的有三种方式：1.通过标记名 2.通过类名 3.通过id名
+   同样的js里最基本也有上述三种方式，今天先说通过id名来获取
+
+4.变量 功能：存储值 含义：变化的值
+  语法： var 变量名 = 值
+
+5.命名规范
+  1.首字符不能是数字，可以是字母，下划线，$（美元符）
+  2.其他字符可以是数字，字母，下划线，$(美元符)
+  3.遵循驼峰式命名法(首字符是小写,从第二个单词开始,首字符是大写) 例如：addClassName,doSomething
+  num,str,boo,o,fn...会在其他单词前加个数据类型
+  number -- n
+  boolean -- boo
+  string --- str
+  obj --- o
+  array --ary
+  regExp --reg
+  function--fn
+  add --增
+  del --删
+  query--查
+  update --更新
+  4.中文命名没有问题，但是不推荐
+
+  var _that = this  通常以下划线开头的变量称为私有变量
+  var $div 框架里变量的表示，例如jquery框架
+
+6.数据类型
+基本数据类型：number(数类型),string（字符串类型）,boolean（布尔类型）,null,undefined
+引用数据类型:对象类型object（Object,Array,RegExp,Date,Math...）和函数类型function
+
+7.number数类型
+  定义：整数(0,正整数,负整数)，小数（浮点数），NaN(not a number，不是一个数)
+  何时为NaN？
+  1)做四则运算（+-*/%）失败时NaN
+  特殊情况：数字和"123"(字符串里的字符是数类型)做-或/,* 运行时能四则运算成功
+  2)强制将其他数据类型转换成数类型(number)失败时是NaN
+  结果：成功->数类型  失败->NaN
+  1.Number() 其他类型转化成数类型
+    true->1
+    false->0
+    null->0
+    undefined->NaN
+    ""->0
+    其他字符串，只要有一个字符(排除.)不是数字，则结果NaN
+  2.parseInt() 将字符串的整数部分拎出来，如果第一个字符不是数字则返回NaN
+    parseInt('.5')
+    NaN
+    parseInt("a5")
+    NaN
+    parseInt("5a")
+    5
+    parseInt("5.0a")
+    5
+  3.parseFloat() 将字符串整数和小数拎出来,如果第一个字符(排除小数点，能识别小数点)不是数字则返回NaN
+    parseFloat(".5")
+    0.5
+    parseFloat("3a")
+    3
+    parseFloat("a.35")
+    NaN
+    parseFloat(".a35")
+    NaN
+
+    怎么检测是一个数是否是有效数？
+    isNaN()来检测下是否是有效数,结果如果是有效果返回false,不是有效数返回true
+    检测步骤：1.Number()强制转换成数类型 2.isNaN()检测
+    isNaN("5a") 1.Number("5a")->NaN 2.isNaN(NaN)->true
+    isNaN("111") 1.Number("111")->111 2.isNaN(111)->false
+    NaN和任何数（包括它自己）比较时都不相等
+    =赋值 == 比较
+    NaN==NaN ->false
+
+8.布尔类型
+     布尔类型的数据只有两种：true和false
+     其他数据类型转换成布尔类型 Boolean()
+     规则："" 0 null undefined NaN 转换成boolean为false，其他全为true
+     if(条件){条件成立执行这里的代码}
+     if([]){alert(1)};
+     ![] !取反  ![]=!Boolean([])=false
+     !![] 相当于Boolean([])
+
+9.字符串类型
+   字符串的定义： 拿双引号或者单引号将字符包起来（成双成对的包）
+   1.str.length可以查看字符串有多少个字符
+   2.通过下标获取到每个字符，第一个字符的下标为0
+   3.四则运算中的+号在字符串这表示拼接
+   4.区别变量和字符串 'str'是字符串 str是变量
+   5.转义字符 \转义 \\表示一个\ \' \" \r(回车) \n(换行) \t（tab键）
+
+10.null和undefined
+   null和undefined都表示空的意思
+   undefined表示从来都没有存在过
+   null表示虽然现在没有，但是以后会有的 标识作用 var obj = null;
+   null+10 =>10
+   undefined+10 => NaN
+   朱南的女朋友是null,虽然现在没有，但是以后会有的
+   朱南的男朋友是undefined 男朋友没有存在过
+
+   需要预习的部分：
+   引用类型中的对象类型
+   基本类型和引用类型的区别
+   条件语句if..else ... switch..case
+   循环语法 for for..in.. while
+   function类型函数
+   选项卡
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

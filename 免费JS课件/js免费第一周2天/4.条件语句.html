@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+</html>
+<script>
+    /*
+    //两种情况
+    if(条件判断){
+        条件成立，执行这里语句
+    }else{
+        条件失败，执行这里语句
+    }
+    */
+    /*var num = 30;
+    if(num<20){
+        alert('num小于20');
+    }else{
+        alert('num大于等于20');
+    }*/
+
+    /*多种情况 if ()...else if()...else...、
+    *如果有一个条件成立，则以下的条件都不去判断，所有的条件都不成立才执行到else语句里
+    * */
+    /*var　a = 9;
+    if(a<8){
+        alert("a小于8");
+    }else if(a>10){
+        alert("a大于10");
+    }else if(a==10){//==比较
+        alert("a等于10");
+    }else{
+       alert("以上情况都不成立，则执行到这里");
+    }*/
+
+    /*有多种情况，还可以用switch..case语句
+    * switch语句里变量和值的比较是三个等号的比较
+    * a === "1"
+    * a === 1
+    * */
+   var a =1;
+    switch (a){/*条件判断*/
+        case "1":/*固定的值*/
+            alert("a等于字符串1");
+            break;//break跳出switch语句,若没写break则会继续往下执行，直到遇到break
+        case 1:
+            alert("a等于数字1");
+            break;
+        case 9:
+            alert('a等于9');
+            break;
+        default:/*相当于else 上述条件都不成立时，才会走到default下面*/
+            alert('a啥都不是');
+    }
+
+
+
+
+
+
+
+</script>

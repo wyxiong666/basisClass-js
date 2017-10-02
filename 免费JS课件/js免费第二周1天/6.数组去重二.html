@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //利用对象作为中间的媒介
+    //把数组的每一项存在对象里，每次存之前判断下对象中是否有这一项，如果有，则说明是重复的得删除
+    var obj = {};
+    var ary = [2,3,3,3,5,7,5,8];
+    for(var i = 0;i<ary.length;i++){
+        var cur = ary[i];
+        if(obj[cur]===cur){//若对象中已经存在，说明是重复项，则得删除
+            ary.splice(i,1);
+            i--;
+            continue;//遇到continue后面的代码不执行
+        }
+        obj[cur] = cur;
+    }
+    console.log(obj);
+    console.log(ary);
+
+
+
+
+</script>

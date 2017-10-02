@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function sum(){
+        var total = null;
+        total = 10+20;
+        //return total;/*把total这个值（返回值）暴露给外界*/
+        return total;
+        //total+=30;
+    }
+    var total = sum();
+    console.log(total);
+    /*返回值：函数运行后自带的值*/
+    /*return相当于函数暴露给外界的接口
+        1.return并非每次都要设置，是否设置看需求
+        2.如果没有写return ,返回值是undefined
+        3.如果写return，但是return后面没有跟值，则返回值还是undefined
+        4.遇到return,函数无条件终止
+    * */
+
+
+
+</script>

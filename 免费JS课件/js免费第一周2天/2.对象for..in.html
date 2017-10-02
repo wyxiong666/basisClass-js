@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //需求：把对象中每个属性的属性名和属性值拿出来
+    //for...in..循环专门用来遍历对象类型的数据
+    var obj = {name:"lucy",age:21,gender:"男",height:165,weight:"60kg",fn:function(){},0:"aa",1:"bb",2:"cc"};
+    //console.log("name" in obj) //判断"name"属性是否obj对象里,存在返回true,不存在返回false
+    for(var attr in obj){//在obj对象里定义了一个变量attr,用来存储属性名
+        //有多少个属性，则会遍历多少次，每次只看一个属性名和值
+        //第一次attr = name obj["name"]
+        //第二次attr = age  obj["age"]
+        //第三次attr = gender
+        //console.log(attr);
+       /* console.log(obj.attr);
+        console.log(obj['attr'])错误 obj对象里有个属性名是attr*/
+        console.log(attr+"~~~~"+obj[attr]);
+    }
+
+</script>

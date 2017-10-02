@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var ary = [7,3,5,2];//从小到大的排序
+    for(var i = 0;i<ary.length-1-0;i++){
+        if(ary[i]>ary[i+1]){
+            var temp = ary[i];
+            ary[i] = ary[i+1];
+            ary[i+1] = temp;
+        }
+    }
+    console.log(ary);
+    //一轮时比较三次 下来把最大的值排到最后 [3, 5, 2, 7]
+
+    //第二轮时 比较2次
+    for(var i = 0;i<ary.length-1-1;i++){
+        if(ary[i]>ary[i+1]){
+            var temp = ary[i];
+            ary[i] = ary[i+1];
+            ary[i+1] = temp;
+        }
+    }
+    console.log(ary); //[3, 2, 5, 7]
+
+    //第三轮  比较1次
+    for(var i = 0;i<ary.length-1-2;i++){
+        if(ary[i]>ary[i+1]){
+            var temp = ary[i];
+            ary[i] = ary[i+1];
+            ary[i+1] = temp;
+        }
+    }
+    console.log(ary);//[2, 3, 5, 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* var a = 7;
+    var b = 3;
+    //值类型的数据交换值需要定义中间变量
+    var temp = null;
+    temp = a;//把变量a的值保存在变量temp里
+    a = b;
+    b = temp;
+    console.log(a);
+    console.log(b);*/
+
+
+</script>

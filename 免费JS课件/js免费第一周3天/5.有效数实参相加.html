@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum(){
+        var total = null;
+        for(var i = 0;i<arguments.length;i++){
+            /*if(!isNaN(arguments[i])){/!*isNaN()是有效数返回false*!/
+                total+=Number(arguments[i]);
+            }*/
+            /*三元运算符*/
+            !isNaN(arguments[i])?total+=Number(arguments[i]):null;
+        }
+        return total;
+    }
+    var total = sum(5,10,"11","aa");
+    console.log(total);
+
+</script>
+</body>
+</html>

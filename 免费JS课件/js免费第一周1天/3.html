@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: palegreen;
+            color: red;
+        }
+        .a1{
+            background: orange;
+        }
+        .a2{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="div1" class="a1" style="color:blue">珠峰培训</div>
+</body>
+</html>
+<script>
+  //document.getElementById("div1");
+  /*document 文档
+    . 从属关系  身体.手  身体.脚
+    get 获得
+    Element 元素
+    By 通过
+    Id id名
+    在整个文档里通过id名获取元素
+  * */
+  console.log(document.getElementById("div1"));
+  console.log(document.getElementById("div1").id);/*获取到id名*/
+  console.log(document.getElementById("div1").className)/*获取到类名*/
+    //需求：把id名是div1这个元素，它的类名改成a2
+    /*
+    * 思路：1.获取id名是div1的这个元素
+    *      2.把类名设置成a2
+    * */
+
+    //document.getElementById("div1").className = "a2";/*设置类名*/
+
+    var oDiv = document.getElementById("div1");
+    //把div元素存储在变量oDiv里，变量oDiv就代表了div元素
+    // alert(oDiv.id)
+    //alert(oDiv.className)
+    //oDiv.className = "a2";
+    //js基础课里操作页面元素的样式只能是行内式
+    //alert(oDiv.style.color)
+    oDiv.style.color = "green";
+    oDiv.style.fontSize = "25px";
+
+//    var 刘炜杰 =document.getElementById("div1");
+//    刘炜杰.style.color = "red";
+
+</script>

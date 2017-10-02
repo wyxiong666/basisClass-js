@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //求2~62之间的随机不重复的四个整数 (取2或取62)
+    /*
+    0)定义一个空数组ary，用来保存随机数
+    1)先设定一个for循环把取的次数确定下来
+    2)在for循环里，2~62的随机数如何取
+    3)取出随机数后得判断下，数组ary中是否有这一项,若没有则放入数组中，
+      若有则不放入，继续执行一次取随机数的操作
+
+    * */
+    function getRanNum(len){
+        var ary = [];
+        var random = null;
+        for(var i = 0;i<len;i++){
+            random = Math.round(Math.random()*(62-2)+2);//随机数
+            if(ary.indexOf(random)==-1){//没有则返回-1，若有则返回这项的索引（索引是大于-1）
+                ary[ary.length] = random;//把随机数放入数组末尾的位置
+                continue;
+            }
+               //若是重复的，则让索引不要发生改变，继续重新提取随机数
+                i--;
+
+        }
+        return ary;
+    }
+
+   var arr = getRanNum(4);
+    console.log(arr);
+
+
+</script>

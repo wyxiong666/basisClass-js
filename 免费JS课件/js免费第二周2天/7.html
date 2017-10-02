@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //while循环适合次数不固定的情况
+    //条件成立，则执行循环体里的内容，不成立则退出整个while循环
+   /* while(条件){
+       循环体里的内容
+    }*/
+    function getRanNum(len){
+        var ary = [];
+        var random = null;
+        //while提取随机数
+        while(ary.length<len){
+            random  = Math.round(Math.random()*(62-2)+2);
+            if(ary.indexOf(random)==-1){
+                ary[ary.length] = random
+            }
+        }
+        return ary;
+    }
+    var arr = getRanNum(4);
+    console.log(arr);
+</script>

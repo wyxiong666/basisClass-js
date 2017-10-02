@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //arguments作用是用来接收参数的，是一个参数的集合
+    //arguments[0] 第一个实参
+    //arguments[1] 第二个实参
+    //arguments.callee 函数本身
+    //arguments.length 获得实参的个数
+    //最后一个实参的获取方式 arguments[arguments.length-1]
+
+    function sum(){
+        //console.log(typeof arguments);
+        //console.dir(arguments);
+        for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);//获取所有的实参
+        }
+    }
+    sum(5,8)
+</script>

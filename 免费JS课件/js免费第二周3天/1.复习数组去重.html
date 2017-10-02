@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+</html>
+<script>
+    /*1.双循环去重*/
+    //1.先依次把数组中的成员提取出来，提取到倒数第二个，提取次数length-1
+    //2.提取出的这个成员 依次和该成员后面所有项进行比较
+   /* var ary = [3,2,2,2,9,3,5,7];
+    for(var i = 0;i<ary.length-1;i++){
+        var cur = ary[i];
+        for(var j = i+1;j<ary.length;j++){
+            if(cur==ary[j]){
+                ary.splice(j,1);
+                j--;
+            }
+        }
+    }
+    console.log(ary);*/
+
+    /*利用对象作为中介来去重
+    先把数组的每一项作为对象的属性名和属性值存在对象里
+    在存入对象之前判断下，对象中是否有这一项，若有这说明是重复得删除，没有则存入对象以便下次再判断
+    * */
+    var ary = [3,2,2,2,9,3,5,7];
+    var obj = {};
+    for(var i = 0;i<ary.length;i++){
+        var cur = ary[i];
+        if(obj[cur]!= undefined){//容易出错
+            //如果数组中这一项之前已经存在对象里，说明这一项是重复的，就得删除
+            ary.splice(i,1);
+            i--;
+        }else{
+            obj[cur] = cur;//以便下次再判断
+        }
+    }
+    console.log(ary);
+
+
+</script>

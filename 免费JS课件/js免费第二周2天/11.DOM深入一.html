@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="oUl">
+    <li>00000</li>
+    <!--注释的内容-->
+    <li id="list1">1111</li>
+    222
+    <li>33333</li>
+    <li>4444</li>
+</ul>
+<script>
+    //封装一个获取子元素节点的方法，兼容所有的浏览器
+    /*
+    * 1.获取所有的子节点 childNodes
+    * 2.从所有的子节点中找出到所有的子元素节点，并放入数组中
+    * */
+    var oUl = document.getElementById("oUl");
+    function getChildren(ele){
+        var ary = [];//保存子元素节点
+        //获取ele下所有的子节点
+        var childs = ele.childNodes;
+        //依次把子节点取出来判断下是否是元素节点，若是元素节点则放入数组中
+        for(var i = 0;i<childs.length;i++){
+           if(childs[i].nodeType==1) {//条件成立，说明是元素节点
+               ary.push(childs[i]);
+           }
+        }
+        return ary;
+    }
+    var ary = getChildren(oUl);
+    ary[1].style.background="red";
+</script>
+</body>
+</html>

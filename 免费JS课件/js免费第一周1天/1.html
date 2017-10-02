@@ -1,0 +1,28 @@
+<!DOCTYPE html><!--html5文档类型-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--CSS内嵌式-->
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <!--CSS外链式（推荐）-->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--js的行内式-->
+    <div onclick="alert(1)">11111</div>
+</body>
+</html>
+<!--js内嵌式是写在script标签-->
+<script>
+
+</script>
+<!--js外链式，通过设置src属性引入js文件的路径-->
+<!--一旦设置了src属性，script里不要再写任何js代码，不起作用-->
+<script src="index.js"></script>

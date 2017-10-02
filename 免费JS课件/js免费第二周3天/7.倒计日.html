@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div1{
+            height: 40px;
+            line-height: 40px;
+            background: #a5fb16;
+            text-align: center;
+        }
+        #div1 span{
+            padding: 0 10px;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+       距离下课还有 <span id="span1">0时0分0秒</span>
+    </div>
+</body>
+</html>
+<script>
+    /*思路：
+    * 1.目标和当前时间的毫秒数之差
+    * 2.把毫秒数差转换成时分秒
+    * 1小时 = 60*60*1000
+    * 1分 = 60*1000
+    * 1秒 = 1000
+    *now.getTime() 距离1970年0时0分0秒的毫秒数
+    * */
+    var now = new Date();//以当前电脑的时间为基准创建时间对象
+    var target = new Date("2017/08/10 18:00:00");//以参数时间为基准创建时间对象
+    //1.目标和当前时间的毫秒数之差
+    var spanTime = target.getTime()-now.getTime();
+   //2.从毫秒数提取出小时数
+    var hour = Math.floor(spanTime / (60 * 60 * 1000));
+    spanTime = spanTime - hour*60*60*1000;//除去小时毫秒数后有多少毫秒
+   //3.从除去小时毫秒数后剩下的毫秒数里提取分钟数
+    var minute = Math.floor(spanTime/(60*1000));
+    spanTime = spanTime - minute*(60*1000);//除去分钟毫秒数后有多少毫秒
+    //4.再除去分钟毫秒数后剩下毫秒数里提取出有多少秒、
+   var second =  Math.floor(spanTime/1000);
+    var oSpan = document.getElementById("span1");
+    var str = hour+"时"+minute+"分"+second+"秒";
+   oSpan.innerHTML = str;
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = 0;
+   /* var timer = window.setTimeout(function(){
+        n++;
+        alert(n);
+    },2000)
+    console.log(timer);*/
+    var timer2 = window.setInterval(function(){
+        n++;
+        if(n==10){
+           window.clearInterval(timer2);
+//            console.log("~~~~"+timer2)
+            timer2 = null;//把编号撕掉
+        }
+    },100);
+
+    //判断一个定时器是开启的还是清除掉，是通过编号的值来判断，若为null则说明定时器已经被清除掉了，若有值，说明定时器还在开启中
+
+</script>
+</body>
+</html>

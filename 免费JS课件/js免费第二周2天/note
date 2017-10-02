@@ -1,0 +1,89 @@
+1.基本数据类型和引用数据类型的区别
+2.不同类型之间的转换
+  1.对象 == 对象 引用类型的数据比较是引用地址 {}=={} []==[] false
+  2.对象 == 字符串 对象通过toString()转换成字符串 []=="" ->true {}==""->false
+  3.对象 == 数字  对象先通过toString()转换成字符，字符串再通过Number()方法转换成数字  [1]==1 ->true
+  4.对象 == 布尔 左右两边统一先转出数类型再比较 [] == true->false
+  5.字符串== 数字 把字符串转换成数字，再比较 '1' == 1 'abc'== NaN
+  6.字符串 == 布尔  左右两边转换成数字再比较 "1" == true ->true
+  7.布尔 == 数字  把布尔类型转换成数类型再比较
+  8.NaN==NaN NaN和任何数（包括它自己）比较时都返回false
+  9.null == undefined 左右边不做数据类型转换 返回结果true
+  10.null===undefined 类型不一样 false
+  11.null和undefined没有toString()方法，和其他任何数比较，返回结果都是false
+   null==false->false
+
+3.数组常用的方法
+①原数组发生改变
+    push() 返回值：添加完内容后长度
+    unshift()  返回值：添加完内容后长度
+    pop() 返回值：删除的内容
+    shift()
+    splice(n,m,x) 返回值是：把删除的内容放在数组里返回
+    reverse()
+    sort()
+
+    var ary = [2, 5, 6, 10, 11];
+    ary.sort(function(a,b){return a-b})
+    ->[2, 5, 6, 10, 11]
+    var ary = ["张三","李四","王五","赵六"]
+    ary.sort(function(a,b){return a.localeCompare(b)})
+    ->["李四", "王五", "张三", "赵六"]
+②原数组不发生改变
+    toString()
+    join("+")按照指定的字符，将数组的每一项拼接成字符串
+    join("") "2561011" 把数组的每一项的靠在一起，返回一个新的字符串
+    join() 默认以逗号为拼接符 "2,5,6,10,11"
+
+    concat() 合并成数组
+    [].concat(5,[1,2])->[5, 1, 2]
+    [1].concat(5,[],[1,2])->[1, 5, 1, 2]
+
+    slice(n,m) 截取数组 从索引n截取到索引m 包前不包后
+    var ary = [2,31,6,7,3]
+    var  res = ary.slice(1,2)
+
+    //判断数组中是否有这一项，若有则返回这项的索引，若没有则返回-1 IE6~IE8不兼容
+    indexOf(n)
+    lastIndexOf(n)
+
+    排序：
+    1)插入排序 2)快速排序 3）冒泡排序
+
+
+   浏览器在加载时，页面上所有的元素会生成有层次结构的节点
+   一个页面跟节点只有一个document(根节点)，一个根节点只有一个根元素（html标签）
+  ① 节点可以分为如下几类：
+               节点类型(nodeType)      节点名称(nodeName)     节点内容(nodeValue)
+   文档节点          9                  #document                null
+***元素节点          1                   大写的标记名              null
+   文本节点          3                    #text                  文本的内容（包括空格和换行）
+   注释节点          8                    #comment               注释的内容
+
+  ② 表示节点之间相互关系的属性
+  1)获取到所有的子节点(元素节点，文本节点，注释节点) childNodes
+  2)获取到所有的子元素节点 children (Ie兼容性，把文本节点也看成是元素节点)
+  3)哥哥节点 previousSibling
+  4)哥哥元素节点 previousElementSibling (ie6~ie8不兼容)
+  5)弟弟节点 nextSibling
+  6)弟弟元素节点 nextElementSibling(ie6~ie8不兼容)
+  7)第一个子节点 firstChild
+  8)第一个子元素 firstElementChild
+  9)最后一个子节点 lastChild
+  10)最后一个子元素节点 lastElementChild
+  11)父节点 parentNode
+
+  ③ 获取DOM元素的方式
+  id名 document.getElementById("id名")
+  类名 context.getElementsByClassName("类名") ie6~ie8不兼容
+  标记名 context.getElementsByTagName("标记名")
+  name属性名 document.getElementsByName("name属性") ie浏览器中非表单元素不起作用
+  各种选择器
+  以下这两个方法可以通过选择器获取元素，但是适合于移动端页面使用
+  document.querySelector() 通过选择器获取到一个元素
+  document.querySelectorAll() 通过选择器获取到一组元素
+
+
+
+
+

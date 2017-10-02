@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //重复在做一件事 for循环 循环次数是知道的
+    /*for循环操作的步骤
+     1.初始化变量 var i = 0; 只有第一次时才初始化
+     2.设置循环条件 i<10
+     3.如果条件成立，执行循环体里的内容
+     4.执行累加操作
+     * */
+    /*两个关键词 break,continue
+     * continue跳出本次循环，continue后面的代码都不再执行
+     * break跳出本轮循环（整个for循环）
+     * */
+    for (var i = 0; i < 10; i++) {
+        if (i < 5) {
+            i += 3;//i = i+3;
+            continue;
+        } else {
+            i += 2;
+            break;
+        }
+        i += 1;
+    }
+    //i的值是几
+    alert(i);
+
+    /*//i++和++i都表示自身累加
+     var i = 10;
+     //var n = i++;//1.先把i的值赋给n 2.i自身累加 i=i+1
+     var n = ++i;//1.先i自身累加1 2.累加后i的值赋给n
+     alert(n);
+     alert(i);*/
+</script>

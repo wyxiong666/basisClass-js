@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    //右盒子 乱糟糟
+    //左盒子 一开始[],结果所有牌从小到大排列
+    /*
+    思路：
+    1.从右盒子取出一项放入左盒子里
+    2.重新从右盒子取出一项放在手上，依次倒着和左盒子里的牌去比较
+    3.手上这张牌比左盒子这张牌大，则放在左盒子牌的后面
+     手上这张牌比左盒子这张牌小，则继续往前比较，直接遇到手上牌比左盒子牌大的情况，放在这张左盒子牌的后面，若一直到最前面，手上牌比盒子里牌小，则放在最前面
+    * */
+    var ary = [33,5,12,9,52,4];
+    function insertSort(ary){
+        var left = ary.splice(0,1);//[33]
+        //1.依次取出ary里的每一项
+        for(var i = 0;i<ary.length;i++){//右盒子
+            var cur = ary[i];//放在手上
+            //2.依次倒着跟左盒子里的牌比较
+            for(var j = left.length-1;j>=0;){
+               if(cur>left[j]){
+                   left.splice(j+1,0,cur);
+                   break;
+               }else{
+                   j--;//继续往前比较
+                   if(j==-1){//比较到最前面
+                       left.unshift(cur);
+                   }
+               }
+            }
+
+        }
+        return left;
+    }
+    console.log(insertSort(ary));
+
+
+</script>

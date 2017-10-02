@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     插入排序思想：
+     0.新建一个盒子（最终的目的：盒子里的数从小到大排序）
+     1.先取出数组的第一项，放入到盒子
+     2.将数组的其他项取出来
+     3.从盒子的最后一项依次往前进行比较
+     3.若从数组中取出的这张牌，比盒子的这项小，继续往前比较，若到最前面还没遇到比这张牌小的，则放在最前面，若比这张牌大，则放在盒子这项的后面
+    * */
+
+    var ary = [33,5,12,9,52,4];
+    function insertSort(ary){
+        var left = ary.splice(0,1); //[33] 盒子
+        for(var i = 0;i<ary.length;i++){
+            var cur = ary[i];//取出的那张牌
+            for(var j = left.length-1;j>=0;){
+                if(cur<left[j]){//取出的牌比盒子牌小
+                    j--;//继续往前
+                    if(j==-1){//说明已经到最前面
+                       left.unshift(cur);
+                    }
+                }else{
+                    left.splice(j+1,0,cur);
+                    break;//跳出里面的for循环
+                }
+            }
+        }
+        return left;
+    }
+    console.log(insertSort(ary));
+
+
+</script>
+</body>
+</html>

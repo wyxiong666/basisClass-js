@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body></body>
+</html>
+<script>
+    //数组常用的方法
+    /*
+     1.方法是什么意思
+     2.需不需要传参数
+     3.返回值是什么
+     4.原数组是否发生改变
+     * */
+    //1.原数组发生改变
+    //1) push() 往数组的末尾添加内容 参数：添加的内容 返回值:数组的长度
+    /*
+     var ary = [5,3,2,4];
+     var res = ary.push(77, 88);
+     console.log(ary);
+     console.log(res);
+     */
+    //2)unshift() 往数组的开始位置添加内容 参数：添加的内容 返回值:数组的长度
+    /*
+     var ary = [5,3,2,4];
+     var res = ary.unshift(77,88);
+     console.log(ary);
+     console.log(res);
+     */
+
+    //3.pop() 删除数组的最后一项 参数：无 返回值：删除的内容
+    /*var ary = [5,3,2,6];
+     var res = ary.pop();
+     console.log(ary);
+     console.log(res);*/
+
+    //另外一种方法
+    //ary.length--  删除数组的最后一项
+    //ary[ary.length] = 7    添加一项内容到数组的最后位置
+
+    //unshift() 删除数组的第一项 参数：无 返回值：删除的内容
+    /*var ary = [5,3,2,6];
+     var res = ary.shift();
+     console.log(ary);//[3,2,6]
+     console.log(res);//5*/
+
+    //splice(n) 从索引n开始一直删除到最后  返回值：删除的内容并且放在一个数组里
+    /* var ary = [5,3,2,6];
+     var res = ary.splice(2);
+     console.log(ary);
+     console.log(res);*/
+    //splice(n,m) n开始删除的索引，m表示删除的个数
+    /* var ary = [5,3,2,6];
+     var res = ary.splice(1,2);
+     console.log(ary);//[5,6]
+     console.log(res);//[3,2]*/
+
+    //splice(n,m,x) n开始删除的索引,m表示删除的个数,x代表替换的内容 以x的内容替换删除的内容
+    //    var ary = [5,3,2,6];
+    //    var res = ary.splice(1,2,8,9,0);
+    //    console.log(ary);//[5,8,9,0,6];
+    //    console.log(res);//[3,2]
+
+    //splice (n,0,x)删除个数零个，代表是添加内容 x的内容是添加到索引n之前
+//    var ary = [5,3,2,6];
+//    var res = ary.splice(1,0,8,9,0);
+//    console.log(ary);//[5,8,9,0,3,2,6]
+//    console.log(res);//[]
+
+    //reverse() 反向排列(倒过来排列)
+    var ary = [5,3,2,6];
+    var res = ary.reverse();
+    //console.log(ary);//[6,2,3,5]
+    //console.log(res);//[6,2,3,5]
+
+    //sort() 没传参数排列10以内的数，返回值：排列后的数组
+//    var ary2 = [6,7,3,12];
+//    var res = ary2.sort();//默认从小到大排列
+//    console.log(ary2);
+//    console.log(res);
+
+    //大于等于10的数，得通过传参数的方式，才能让数组从小到大，或者从大到小排列
+    //每一项是数字 return a-b/return b-a
+    //每一项是字符串(按照字典顺序进行排列) return a.localCompare(b)/b.localCompare(a)
+
+    var ary3 = [6,7,3,12];
+    var res = ary3.sort(function(a,b){
+        //return a-b; //从小到大排列
+        return b-a //从大到小排列
+    })
+    //console.log(res);
+//    var ary5 = ["b","c","a","B","A","E"];  //"a"和"A"在"b"和"B"前面
+    var ary5 = ["张三","李四","王五"];
+    ary5.sort(function(a,b){
+        return a.localeCompare(b);
+    })
+    console.log(ary5);//["李四", "王五", "张三"]
+
+
+    //2.原数组不发生改变
+    //toSting() 将数组转换成字符串
+//    var ary = [1,5,6,7];
+//    var res = ary.toString();
+//    console.log(ary);
+//    console.log(res);//"1,5,6,7"
+
+    //join("+") 将数组的每一项按照指定的字符拼接成字符串
+//    var ary = [1,5,6,7];
+//    var res = ary.join("+");//"1+5+6+7";
+//    console.log(eval(res)); //提供一个供js代码执行的环境
+    //console.log(res);
+    //join()没传参数，则默认以，拼接
+   // console.log(ary.join());//'1,5,6,7'
+    //console.log(ary.join("")); //把数组的每一项合并在一起，返回一个新的字符串 "1567";
+
+
+    //concat() 合并数组
+//    var ary = [1];
+//    var ary2 = [2,3];
+//    var str = 5;
+//    var res = ary.concat(str,ary2);
+//    console.log(res);//[1,5,2,3]
+    //[].concat(5,[1,2]);//[5,1,2]
+
+
+
+    //slice(n,m) 截取数组中的某些项 从索引n一直截取到索引m (包前不包后) n<m
+//    var ary = [2,5,8,9];
+    //var res = ary.slice(1);//从索引1开始一直截取到最后
+    //console.log(res);//[5,8,9]
+//    var res = ary.slice(1,3);
+//    console.log(res);//[5,8]
+
+
+//    console.log(ary.slice(-1, -3));//[]
+//    console.log(ary.slice(-3, -1));//[5,8] 负数参数索引 = 负数参数+数组个数  倒数第几项
+
+
+    //判断数组中是否有这一项，如有则返回这一项索引，若没有则返回-1
+    //可以两个参数，第二个参数指定开始查找的位置（可选）
+    //IE6~8不兼容
+//    var ary = [2,5,8,9,8,10];
+    //indexOf(n)//从左往右查找n第一次出现的位置
+    //lastIndexOf(n)//从右往左查找n第一次出现的位置
+   // console.log(ary.indexOf(8));//2
+   // console.log(ary.lastIndexOf(8));//4
+    //console.log(ary.indexOf(8,3));//4 第二个参数不能设置负数
+
+
+</script>

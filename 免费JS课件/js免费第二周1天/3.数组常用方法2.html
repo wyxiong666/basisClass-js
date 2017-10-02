@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    //1.原数组改变
+    var ary = [5,2,3,7]
+    push();
+    unshift();
+    pop();
+    shift();
+    splice(n,m,x)
+    reverse();
+    ary.sort()
+    ary.sort(function(a,b){//a数组前一项 b数组后一项 number类型
+        return a-b;//从小到大
+        //return b-a;//从大到小
+    })
+    ary.sort(function(a,b){ //string类型 例如比较姓名
+        //return a.localeCompare(b) //从小到大
+        return b.localeCompare(a) //从大到小
+
+    })
+
+    //2.原数组不发生改变
+    toString();
+    join("+"); join(""); join();
+    concat()
+    slice(1,-1);
+    indexOf()
+    lastIndexOf()
+
+    //3.es5迭代方法：forEach() map() some() every() reduce() reduceRight()
+
+
+
+</script>

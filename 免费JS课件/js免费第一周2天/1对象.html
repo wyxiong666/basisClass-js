@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script>
+ var person = {name:"lucy",age:21,gender:"男",height:165,weight:"60kg",fn:function(){}};
+//1.添加属性
+    //person.width ="100px";
+      person['width']='100px';//[]里属性名一定要用''包起来,这样才表示属性名
+
+//2.修改
+    //person.gender = "女";
+    person['gender']="女1";
+
+ //3.查找
+    //从person这个对象中查找name属性值
+    console.log(person.name)
+    console.log(person['name'])
+    //如果查找的这个属性名不在这个对象中，则结果是啥？undefined
+    console.log(person.aa)
+    console.log(person['aa']);
+
+ //4.删除 真删除和假删除
+   // person.height = null;//假删除
+    //delete person.height;真删除
+    delete  person['height'];
+
+    console.log(person);
+
+
+    var oDiv = document.getElementById("div1");
+    //console.log(oDiv.aa);//不是天生的属性，操作元素时称为自定义属性
+    //oDiv.aa ="5";
+    //console.dir(oDiv);
+
+    var obj = {name:"lucy",age:21,gender:"男",height:165,weight:"60kg",fn:function(){},0:"aa",1:"bb",2:"cc"};
+     obj.cc ="111";
+     console.log(obj);
+</script>

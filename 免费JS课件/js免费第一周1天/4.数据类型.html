@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //变量是什么类型是由值来决定 (js是弱类型语言)
+    //typeof来检测是什么数据类型
+    var num = 123;  //number
+    var str = "abc";//string
+    var boo = true;//boolean
+    var fn = function(){};//function
+    var ary = [1,2,3];//object
+    var reg = /[+-]?(?:\d+|[1-9]\d+)(?:\.\d+)?/;//object
+    var obj = {};//object
+    var n = null;//object 比较特殊，大家要特别记忆下
+    var a;  //一个变量没有赋值，值是undefined
+    //var a = undefined;这个是错误的，不能把undefined赋值给变量，不符合逻辑
+    //alert(typeof a);
+
+    //扩展部分（正式课讲）
+    //alert(reg instanceof RegExp);  //检测ary这个对象是否是Array的实例，在面向对象那边学习
+    //alert(Object.prototype.toString.call(ary));//准确的检测数据类型（正式课第三周讲）  "[object Array]"
+
+    alert(typeof typeof typeof typeof 123);//"string"
+//    typeof 123 ->"number"
+//    typeof "number"->"string"
+//    typeof  "string"->"string"
+</script>

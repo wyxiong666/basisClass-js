@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--方法运行，传的个数不一样，求任意个数的实参之和,最后返回-->
+<script>
+    /*
+    * 1.先获取到所有的实参
+    * 2.分别让每个实参相加  累加(把上一次值和这一次值相加)
+    * */
+    function sum(){
+        var total = null;/*标记的作用*/
+      /*  for(var i = 0;i<arguments.length;i++){
+            total += arguments[i];//total = total+arguments[i];
+            //i = 0;total = total+arguments[0] = null+6 = 0+6=6;
+            //i = 1;total = total+arguments[1] = 6+8 = 14;
+            //i = 2;total = total+arguments[2] = 14+10=24
+        }*/
+        var total = null;
+        for(var i = 0;i<arguments.length;i++){
+            total += arguments[i];//total = total+arguments[i]
+            //第一次total = 6;
+            //第二次total = total+arguments[1]=6+8=14;
+            //第三次total = total+arguments[2] = 14+10 = 24
+
+        }
+        return total;
+    }
+    console.log(sum(6, 8, "aa"));
+
+
+</script>
+
+</body>
+</html>

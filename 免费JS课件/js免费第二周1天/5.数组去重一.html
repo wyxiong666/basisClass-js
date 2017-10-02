@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //先提取出一项，然后分别和后面所有项进行比较，如果有相同，则把这项删除
+    var ary = [2,3,3,3,5,7,5,8];
+    for(var i = 0;i<ary.length-1;i++){
+        var cur = ary[i];//取出的那一项 i= 0 cur = ary[0]=2
+        for(var j = i+1;j<ary.length;j++){
+           if(cur==ary[j]){
+               ary.splice(j,1);//把索引是j的这一项删除
+               //数组的塌陷
+               j--;
+           }
+        }
+    }
+    console.log(ary);
+
+    //选项卡和数组去重（两种方法）
+    //（冒泡，插入，快速） -100
+
+
+
+
+</script>
+</body>
+</html>

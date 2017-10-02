@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var obj = {name:"lily",age:18,gender:true,0:"a",1:"b",2:"c"};
+    //把只有数字属性名的对象单独独立成数组，数组的本质是个对象，是从对象中细分出来的一种类型
+    var obj = {0:"a",1:111,2:"c"};
+    //定义数组 数字属性名隐藏，不用写，但是实际是有的，默认第一项索引是0，依次递增 ary.length可以获取到数组的长度
+    //最后一项的索引 ary.length-1    ary[ary.length-1]
+    var ary = ["a",true,"c"];
+    //    for(var attr in ary){
+    //        console.log(ary[attr]);
+    //    }
+    //遍历数组更倾向于用for循环
+    for(var i = 0;i<ary.length;i++){
+        console.log(ary[i]);
+    }
+
+    //var ary = new Array("2");
+
+</script>

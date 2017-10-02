@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //求2~62之间的随机四个整数 (取2或取62)
+    function getRanNum(len){
+        var arr = [];
+        var num = null;
+        for (var i=0;i<len;i++){
+            num = Math.round( Math.random()*(62-2)+2);
+            arr.push(num)
+        }
+        return arr;
+    }
+
+   var arr = getRanNum(10);//1.让getRanNum()方法运行 2.让return后面的值赋给arr
+    console.log(arr);
+
+
+    //函数定义和执行
+    //为什么要学习函数？
+    //封装性，防止冲突，下次再需要实现相同功能时，只需要调用即可
+    //若写形参，就得传实参，若实参没传，则形参值是undefined
+    //实参个数不确定，用什么来接收？arguments
+    //return 是让函数运行完之后自带一个值，这个值称为返回值
+    //没写return或return后没有值，则返回值是undefined
+
+</script>

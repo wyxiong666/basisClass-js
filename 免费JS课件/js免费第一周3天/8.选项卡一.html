@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        #tab{
+            width: 304px;
+            margin: 20px auto;
+        }
+        #tab ul{
+            overflow: hidden;
+            border-right: 1px solid green;
+        }
+        #tab ul li{
+            width: 100px;
+            border-left:1px solid green;
+            border-top:1px solid green;
+            line-height: 40px;
+            text-align: center;
+            float: left;
+            background: pink;
+            color: #fff;
+        }
+
+        #tab div{
+            border:1px solid green;
+            height: 200px;
+            display: none;
+        }
+        #tab ul li.selectLi{
+            background: palegreen;
+        }
+        #tab div.selectDiv{
+            display: block;
+            background: palegreen;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="selectLi" >我的关注</li>
+        <li >推荐</li>
+        <li >导航</li>
+    </ul>
+    <div class="selectDiv">我的关注的内容</div>
+    <div >推荐的内容</div>
+    <div >导航的内容</div>
+</div>
+</body>
+</html>
+<script>
+    //1.获取所需要操作的元素
+    var oTab = document.getElementById("tab");
+    var oLis = oTab.getElementsByTagName("li");//li的集合
+    var oDivs = oTab.getElementsByTagName("div");//div的集合
+
+   //2.给每个li绑定点击事件
+    /*每次先把上一次选中的li和div类名清除掉，然后再给当前点击的li,div添加类名*/
+    var prevIndex = 0;//默认选中的li的下标
+    function changeTab(n){//n：当前点击的li的下标  prevIndex：上次选中的li的下标
+        console.log(n);
+        oLis[prevIndex].className = "";
+        oDivs[prevIndex].className = "";
+        oLis[n].className = "selectLi";
+        oDivs[n].className = "selectDiv";
+        prevIndex = n;//把当前点击的下标保存，这样下次就能知道上次是哪个li被选中
+    }
+
+    /*oLis[0].onclick  = function(){
+     changeTab(0)
+     }
+     oLis[1].onclick  = function(){
+     changeTab(1)
+     }
+     oLis[2].onclick  = function(){
+     changeTab(2)
+     }*/
+    for(var i = 0;i<oLis.length;i++){
+        oLis[i].zhufeng = i;//把每个li的下标作为自定义属性保存在li里
+        oLis[i].onclick = function(){
+            //this 指当前点击的元素
+            changeTab(this.zhufeng);
+        }
+    }
+
+</script>
